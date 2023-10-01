@@ -1,41 +1,34 @@
 "use client";
-import { Layout , Compass , ShoppingBag , BarChart} from "lucide-react"
+import { Layout , Compass , ShoppingBag , BarChart , ShoppingCart} from "lucide-react"
 import {SidebarItem} from "./Sidebar-item";
 import { usePathname } from "next/navigation";
 
 const userRoutes = [
     {
         icon: Layout,
-        label: "Dashboard",
+        label: "Home Page",
         href: "/",
     },
     {
         icon: Compass,
         label: "Browse",
         href: "/search",
-    }
-    
-];
-
-const adminRoutes = [
-    {
-        icon: ShoppingBag,
-        label: "Products",
-        href: "/admin/products",
     },
     {
-        icon: BarChart,
-        label: "Analytics",
-        href: "/admin/analytics",
+        icon: ShoppingCart,
+        label: "Cart Items",
+        href: "/shoppingcart",
     }
 ];
+
+
+
 
 const SidebarRoutes = () => {
 
     const pathname = usePathname();
 
-    const isAdminPage = pathname?.startsWith("/admin");
-    const routes = isAdminPage ? adminRoutes : userRoutes;
+    const routes = userRoutes;
 
     return (
         <div className="flex flex-col w-full">

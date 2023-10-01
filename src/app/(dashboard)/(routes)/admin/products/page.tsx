@@ -1,9 +1,9 @@
-const products = () =>{
-    return (
-        <div className="">
-            <h1>I am admin</h1>
-        </div>
-    )
-}
+const products = () => {
+  return (
+    <div>
+      
+    </div>
+  );
+};
 
 export default products;
