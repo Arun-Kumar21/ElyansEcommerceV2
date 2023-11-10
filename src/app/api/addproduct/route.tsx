@@ -3,7 +3,7 @@ import Product from "../../../../models/Product";
 import { NextResponse } from "next/server";
 
 export async function POST(request: any) {
-  const { title, slug, desc, img, category, size, color, price, availableQty } = await request.json();
+  const { title, slug, desc, img, category, size, color, price, availableQty , featured } = await request.json();
 
   connectDb();
 
@@ -18,6 +18,7 @@ export async function POST(request: any) {
       color,
       price,
       availableQty,
+      featured
     });
     return NextResponse.json({ success: "product added successfully" });
   }

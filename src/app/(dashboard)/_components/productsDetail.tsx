@@ -50,14 +50,18 @@ const ProductDetail = () => {
   return (
     <div>
       <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-col text-center w-full mb-20">
+        <div className="container px-5 py-12 mx-auto">
+          <div className="flex flex-col text-center w-full mb-8">
             <h2 className="text-sm text-sky-500 tracking-widest font-medium title-font mb-1">
               Discover Our Inventory
             </h2>
             <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 dark:text-slate-300">
               eLYans ECommerce 2.0
             </h1>
+          </div>
+
+          <div className="flex flex-col text-center w-full mb-2">
+            <h1 className="dark:text-white">Select Category</h1>
           </div>
 
           <section className="text-gray-600 body-font">

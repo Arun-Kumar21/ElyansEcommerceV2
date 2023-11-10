@@ -1,13 +1,21 @@
 "use client";
-import { useEffect, useState } from "react";
+
+import { useEffect, useState, useContext } from "react";
+import CartContext from "@/app/context/cartContext/cartContext";
+import { useToast } from "@/components/ui/use-toast";
+import Link from "next/link";
+import { Expand  } from 'lucide-react';
 
 const Shoes = () => {
   const [products, setProducts] = useState([]);
+  const { toast } = useToast();
+
+  const cartContext: any = useContext(CartContext);
 
   useEffect(() => {
     const controller = new AbortController();
     const signal = controller.signal;
-    fetch("http://localhost:3000/api/getproducts", {
+    fetch("/api/getproducts", {
       signal: signal,
     })
       .then((res) => {
@@ -16,9 +24,9 @@ const Shoes = () => {
       .then((data) => {
         setProducts(data.products);
       })
-      .catch((err)=>{
-        console.log(err)
-      })
+      .catch((err) => {
+        console.log(err);
+      });
     return () => {
       controller.abort();
     };
@@ -37,7 +45,7 @@ const Shoes = () => {
               return (
                 <div
                   key={product.slug}
-                  className="lg:w-1/4 md:w-1/2 p-4 w-full"
+                  className="lg:w-1/4 md:w-1/2 p-4 w-full shadow-sm rounded-md dark:text-white"
                 >
                   <a className="block relative h-48 rounded overflow-hidden">
                     <img
@@ -57,8 +65,30 @@ const Shoes = () => {
                       </h2>
                     </div>
 
-                    <div>
-                      <button className="bg-black dark:bg-white dark:text-black text-white p-2 rounded-md mt-2">
+                    <div className="flex gap-x-1 h-1/2 items-center p-2">
+                      <Link href={`/Products/${product.slug}`}>
+                         <div className="p-2 dark:text-white rounded-md text-black shadow-sm hover:scale-110">
+                         <Expand
+                            size={20}
+                          />
+                         </div>
+                      </Link>
+
+                      <button
+                        className="bg-black dark:bg-white dark:text-black text-white p-2 rounded-md  hover:bg-sky-500 hover:text-white transition duration-300 ease-in-out dark:hover:bg-sky-500 dark:hover:text-white shadow-md"
+                        onClick={() => {
+                          cartContext.addToCart(
+                            1,
+                            product.price,
+                            product.title
+                          );
+                          toast({
+                            title: "Added to Cart",
+                            description:
+                              "We've added the product to your cart.",
+                          });
+                        }}
+                      >
                         Add to Cart
                       </button>
                     </div>

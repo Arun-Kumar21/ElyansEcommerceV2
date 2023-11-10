@@ -141,8 +141,8 @@ export const NavbarRoutes = () => {
                   <DropdownMenuSeparator />
                   {menuItems.map((link) => {
                     return (
-                      <DropdownMenuItem>
-                        <Link key={link.path} href={link.path}>
+                      <DropdownMenuItem key={link.path}>
+                        <Link href={link.path}>
                           <div className="flex items-center gap-x-4">
                             <link.icon
                               size={24}

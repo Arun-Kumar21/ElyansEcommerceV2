@@ -14,22 +14,22 @@ const Footer = () => {
               </h2>
               <nav className="list-none mb-10">
                 <li>
-                  <Link href="/" className="text-gray-600 hover:text-sky-400">
+                  <Link href="/Products/nikeSportX" className="text-gray-600 hover:text-sky-400">
                     nike sports
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="text-gray-600 hover:text-sky-400">
+                  <Link href="/Products/nikeRainbow" className="text-gray-600 hover:text-sky-400">
                     nike rainbow
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="text-gray-600 hover:text-sky-400">
+                  <Link href="/Products/nikeAirShoes" className="text-gray-600 hover:text-sky-400">
                     nike air
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="text-gray-600 hover:text-sky-400">
+                  <Link href="/Products/ReebokGlance" className="text-gray-600 hover:text-sky-400">
                     Reebok
                   </Link>
                 </li>
@@ -68,17 +68,17 @@ const Footer = () => {
               </h2>
               <nav className="list-none mb-10">
                 <li>
-                  <Link href="/" className="text-gray-600 hover:text-sky-400">
+                  <Link href="/Products/bellaCanvasTshirt" className="text-gray-600 hover:text-sky-400">
                     Bella
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="text-gray-600 hover:text-sky-400">
+                  <Link href="/Products/versaceTshirt" className="text-gray-600 hover:text-sky-400">
                     Versace
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="text-gray-600 hover:text-sky-400">
+                  <Link href="/Products/adidasSolidRedTshirt" className="text-gray-600 hover:text-sky-400">
                     Adidas
                   </Link>
                 </li>

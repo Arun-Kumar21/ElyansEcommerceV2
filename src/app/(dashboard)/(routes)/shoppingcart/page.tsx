@@ -1,9 +1,13 @@
 "use client";
 
-import { useCartContext } from "@/app/Context/cart/store";
+import CartContext from "@/app/context/cartContext/cartContext";
+import { useContext } from "react";
+
 
 const ShoppingCart = () => {
-  const { removeCart, subTotal } = useCartContext();
+  const cartContext:any = useContext(CartContext);
+  const removeCart = cartContext.removeCart;
+  const subTotal = cartContext.subTotal;
   const cartItems = JSON.parse(localStorage.getItem("cart") || "{}");
 
   return (

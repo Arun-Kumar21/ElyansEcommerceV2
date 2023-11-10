@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import { useState, useEffect } from "react";
 import Logo from "../../_components/Logo";
@@ -9,7 +9,6 @@ const signup = () => {
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const router = useRouter();
-
 
   const handleChange = (e: any) => {
     if (e.target.name == "email") {
@@ -43,6 +42,8 @@ const signup = () => {
       localStorage.setItem("name", response.name);
       router.push("/");
     }
+
+    window.location.reload();
 
     setemail("");
     setpassword("");
@@ -80,7 +81,7 @@ const signup = () => {
                     autoComplete="email"
                     required
                     placeholder="Email address"
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6 px-2 dark:text-white"
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6 px-2 dark:bg-white"
                   />
                 </div>
               </div>
@@ -112,7 +113,7 @@ const signup = () => {
                     onChange={handleChange}
                     required
                     placeholder="Password"
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6 px-2 dark:text-white"
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6 px-2 dark:bg-white"
                   />
                 </div>
               </div>

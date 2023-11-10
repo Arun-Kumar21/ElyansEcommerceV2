@@ -4,6 +4,7 @@ import { Navbar } from "./_components/navbar";
 import Footer from "./_components/footer";
 import { Toaster } from "@/components/ui/toaster";
 
+import CartState from "../context/cartContext/cartState";
 import ProgressBar from "./_components/ProgressBar";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
@@ -17,30 +18,31 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
       <div>
         <ProgressBar />
       </div>
-
-      <div className="h-full">
-        <div className="h-[80px] fixed inset-y-0 w-full z-10">
-          <Navbar />
-        </div>
-
-        <div>
-          <Toaster />
-        </div>
-
+      <CartState>
         <div className="h-full">
-          <div className="hidden md:flex h-full w-36 xl:w-56 inset-y-0 flex-col fixed z-50">
-            <Sidebar />
+          <div className="h-[80px] fixed inset-y-0 w-full z-10">
+            <Navbar />
           </div>
 
-          <main className="md:pl-36 xl:pl-56 h-full pt-[100px]">
-            {children}
-          </main>
-        </div>
+          <div>
+            <Toaster />
+          </div>
 
-        <div className="md:pl-36 xl:pl-56 h-full inset-y-0 w-full">
-          <Footer />
+          <div className="h-full">
+            <div className="hidden md:flex h-full w-36 xl:w-56 inset-y-0 flex-col fixed z-50">
+              <Sidebar />
+            </div>
+
+            <main className="md:pl-36 xl:pl-56 h-full pt-[100px]">
+              {children}
+            </main>
+          </div>
+
+          <div className="md:pl-36 xl:pl-56 h-full inset-y-0 w-full">
+            <Footer />
+          </div>
         </div>
-      </div>
+      </CartState>
     </ThemeProvider>
   );
 };

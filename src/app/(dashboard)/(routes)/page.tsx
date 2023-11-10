@@ -24,7 +24,7 @@ const Home = () => {
         <Image
           src={hero}
           alt="hero"
-          className="object-cover w-full h-[70vh] "
+          className="object-cover w-full h-[70vh]"
           priority
         />
 
@@ -47,10 +47,9 @@ const Home = () => {
         </div>
 
         <div className="w-full h-full">
-          <div>
-            <ProductDetail />
-          </div>
+          <ProductDetail />
         </div>
+
       </div>
     </div>
   );
